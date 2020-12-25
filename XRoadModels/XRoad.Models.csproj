@@ -1,0 +1,1041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDBA8DF2-2031-4A08-A2F6-2E7B589CD574}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XRoadModels</RootNamespace>
+    <AssemblyName>XRoadModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>strongName.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="External\CheckpointsData\RequestCheckpointsData.cs" />
+    <Compile Include="External\CheckpointsData\CheckpointData.cs" />
+    <Compile Include="External\CheckpointsData\ResponseCheckpointsData.cs" />
+    <Compile Include="FileInfo\RequestFile.cs" />
+    <Compile Include="FileInfo\ResponseFile.cs" />
+    <Compile Include="GRS\GRSTransport\RequestTransportPin.cs" />
+    <Compile Include="GRS\GRSTransport\RequestTransportCurrent.cs" />
+    <Compile Include="GRS\GRSTransport\ResponseTransportsCar.cs" />
+    <Compile Include="GRS\GRSTransport\ResponseTransportsPin.cs" />
+    <Compile Include="GRS\GRSTransport\ResponseTransportCurrent.cs" />
+    <Compile Include="GRS\GRSPassport\RequestPhotoByPin.cs" />
+    <Compile Include="GRS\GRSPassport\ResponsePhotoByPin.cs" />
+    <Compile Include="GRS\GRSForeign\RequestForeign.cs" />
+    <Compile Include="GRS\GRSForeign\ResponseForeign.cs" />
+    <Compile Include="GRS\GRSDriver\RequestDriver.cs" />
+    <Compile Include="GRS\GRSDriver\ResponseDriver.cs" />
+    <Compile Include="GRS\GRSZags\RequestZags.cs" />
+    <Compile Include="GRS\GRSZags\ResponseZags.cs" />
+    <Compile Include="GRS\GRSAddress\RequestAddress.cs" />
+    <Compile Include="GRS\GRSAddress\ResponseAddress.cs" />
+    <Compile Include="GRS\GRSPassport\RequestPassportByPSN.cs" />
+    <Compile Include="GRS\GRSPassport\ResponsePassportByPSN.cs" />
+    <Compile Include="GTS\RequestGTSCountry.cs" />
+    <Compile Include="GTS\ResponseGTSCountry.cs" />
+    <Compile Include="GTS\RequestGTSBrand.cs" />
+    <Compile Include="GTS\ResponseGTSBrand.cs" />
+    <Compile Include="GTS\RequestGTSCheckpoint.cs" />
+    <Compile Include="GTS\ResponseGTSCheckpoint.cs" />
+    <Compile Include="GTS\AxialLoad.cs" />
+    <Compile Include="GTS\RequestGTSWeightAct.cs" />
+    <Compile Include="GTS\ResponseGTSWeightAct.cs" />
+    <Compile Include="MemberItem.cs" />
+    <Compile Include="MetaData\RequestMeta.cs" />
+    <Compile Include="MetaData\ResponseMeta.cs" />
+    <Compile Include="GNS\GNSReg\RequestRegGNS.cs" />
+    <Compile Include="GNS\GNSReg\ResponseRegGNS.cs" />
+    <Compile Include="IXRoadInternal.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalAddress\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalDriver\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalForeign\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalJur\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalPassport\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalVehicles\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalZags\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="JUR\RequestTinSubject.cs" />
+    <Compile Include="JUR\ResponseTinSubject.cs" />
+    <Compile Include="Util\Util.Convert.cs" />
+    <Compile Include="Service References\ws_ExternalGNSDebt\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalGNSReg\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalGTS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalMeta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ws_ExternalSF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="GNS\GNSPaymentDebt\RequestPaymentDebtGNS.cs" />
+    <Compile Include="GNS\GNSPaymentDebt\ResponsePaymentDebtGNS.cs" />
+    <Compile Include="SFPaymentDebt\RequestPaymentDebtSF.cs" />
+    <Compile Include="SFPaymentDebt\ResponsePaymentDebtSF.cs" />
+    <Compile Include="External\Carrier\CarrierLicense.cs" />
+    <Compile Include="External\Country\RequestCountry.cs" />
+    <Compile Include="External\Country\ResponseCountry.cs" />
+    <Compile Include="External\Checkpoint\RequestCheckpoint.cs" />
+    <Compile Include="External\Checkpoint\ResponseCheckpoint.cs" />
+    <Compile Include="IXRoadService.cs" />
+    <Compile Include="Util\Util.Log.cs" />
+    <Compile Include="Util\Util.Service.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="External\CheckpointWeight\RequestCheckpointWeight.cs" />
+    <Compile Include="External\CheckpointWeight\ResponseCheckpointWeight.cs" />
+    <Compile Include="RequestParam.cs" />
+    <Compile Include="ResponseData.cs" />
+    <Compile Include="RequestData.cs" />
+    <Compile Include="ResponseStatus.cs" />
+    <Compile Include="ResponseBase.cs" />
+    <Compile Include="External\VehicleWeight\WeightControl.cs" />
+    <Compile Include="External\VehicleWeight\RequestVehicleWeight.cs" />
+    <Compile Include="External\Carrier\RequestCarrier.cs" />
+    <Compile Include="External\VehicleWeight\ResponseVehicleWeight.cs" />
+    <Compile Include="External\Carrier\ResponseCarrier.cs" />
+    <Compile Include="Service References\ExternalService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="XRoadInternal.cs" />
+    <Compile Include="XRoadService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ExternalService\ws_External.wsdl" />
+    <None Include="Service References\ExternalService\ws_External.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExternalService\ws_External1.wsdl" />
+    <None Include="Service References\ExternalService\ws_External1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExternalService\ws_External2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExternalService\XRoadModels.ExternalService.ws_ExternalExtCarrier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExternalService\XRoadModels.ExternalService.ws_ExternalExtCheckpoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExternalService\XRoadModels.ExternalService.ws_ExternalExtCheckpointsData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExternalService\XRoadModels.ExternalService.ws_ExternalExtCheckpointWeight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExternalService\XRoadModels.ExternalService.ws_ExternalExtCountry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExternalService\XRoadModels.ExternalService.ws_ExternalExtVehicleWeight.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\InfocomService.wsdl" />
+    <None Include="Service References\ws_ExternalAddress\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbAddressResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbMonitoringStatisticsByRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbMonitoringStatisticsByRegionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbNationalStaticsCommitteeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbNationalStaticsCommitteeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbReferenceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.asbReferenceResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.foundDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.foundDocumentResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.testAsbAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.testAsbAddressResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.testPortalAsbFormToAsbResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.testPortalAsbFormToAsbResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalAddress\XRoadModels.ws_ExternalAddress.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\InfocomService.wsdl" />
+    <None Include="Service References\ws_ExternalDriver\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.driverLicenseStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.driverLicenseStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.vsMonitoringDriverLicenseCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.vsMonitoringDriverLicenseCountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.vsMonitoringDriverLicensePeriodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.vsMonitoringDriverLicensePeriodResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalDriver\XRoadModels.ws_ExternalDriver.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\InfocomService.wsdl" />
+    <None Include="Service References\ws_ExternalForeign\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\XRoadModels.ws_ExternalForeign.foreignByDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\XRoadModels.ws_ExternalForeign.foreignByDocResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\XRoadModels.ws_ExternalForeign.foreignListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\XRoadModels.ws_ExternalForeign.foreignListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\XRoadModels.ws_ExternalForeign.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalForeign\XRoadModels.ws_ExternalForeign.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGNSDebt\GnsService.wsdl" />
+    <None Include="Service References\ws_ExternalGNSDebt\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalGNSDebt\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalGNSDebt\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalGNSDebt\XRoadModels.ws_ExternalGNSDebt.taxpayerDataByInnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGNSDebt\XRoadModels.ws_ExternalGNSDebt.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGNSDebt\XRoadModels.ws_ExternalGNSDebt.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGNSReg\GnsService.wsdl" />
+    <None Include="Service References\ws_ExternalGNSReg\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalGNSReg\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalGNSReg\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalGNSReg\XRoadModels.ws_ExternalGNSReg.tpDataByINNforBusinessActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGNSReg\XRoadModels.ws_ExternalGNSReg.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGNSReg\XRoadModels.ws_ExternalGNSReg.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGTS\MTDService.wsdl" />
+    <None Include="Service References\ws_ExternalGTS\XRoadModels.ws_ExternalGTS.CountryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGTS\XRoadModels.ws_ExternalGTS.PostsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGTS\XRoadModels.ws_ExternalGTS.TradeCarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGTS\XRoadModels.ws_ExternalGTS.WeightActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGTS\XRoadModels.ws_ExternalGTS.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalGTS\XRoadModels.ws_ExternalGTS.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalJur\getSubjectByQuery.wsdl" />
+    <None Include="Service References\ws_ExternalJur\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalJur\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalJur\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalJur\XRoadModels.ws_ExternalJur.getSubjectByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalJur\XRoadModels.ws_ExternalJur.getSubjectByQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalJur\XRoadModels.ws_ExternalJur.getSubjectByTinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalJur\XRoadModels.ws_ExternalJur.getSubjectByTinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalJur\XRoadModels.ws_ExternalJur.Subject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalJur\XRoadModels.ws_ExternalJur.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalJur\XRoadModels.ws_ExternalJur.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalMeta\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalMeta\MeteServices.wsdl" />
+    <None Include="Service References\ws_ExternalMeta\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalMeta\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalMeta\XRoadModels.ws_ExternalMeta.getWsdlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalMeta\XRoadModels.ws_ExternalMeta.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalMeta\XRoadModels.ws_ExternalMeta.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\InfocomService.wsdl" />
+    <None Include="Service References\ws_ExternalPassport\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.bankPinServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.bankPinServiceResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.lostPassportsByMonthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.lostPassportsByMonthResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportDataByPSNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportDataByPSNResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportDataForInfosystemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportDataForInfosystemaResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportLastPhotoByPinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportLastPhotoByPinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportSearchByNSPDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportSearchByNSPDateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.passportStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.testBankPinServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.testBankPinServiceResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.testPassportDataByPSNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.testPassportDataByPSNResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalPassport\XRoadModels.ws_ExternalPassport.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalSF\PaymentDebtInfoService.wsdl" />
+    <None Include="Service References\ws_ExternalSF\PaymentDebtInfoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalSF\PaymentDebtInfoService1.wsdl" />
+    <None Include="Service References\ws_ExternalSF\PaymentDebtInfoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalSF\PaymentDebtInfoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalSF\XRoadModels.ws_ExternalSF.PaymentDebtInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalSF\XRoadModels.ws_ExternalSF.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalSF\XRoadModels.ws_ExternalSF.XRoadResponseOf_PaymentDebtInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalSF\XRoadModels.ws_ExternalSF.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\InfocomService.wsdl" />
+    <None Include="Service References\ws_ExternalVehicles\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.carCheckByGovPlateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.carCheckByGovPlateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.certificateStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.certificateStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.testTransportByPinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.testTransportByPinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportArestByGovPlateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportArestByGovPlateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportByPinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportByPinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportCurrentArestInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportCurrentArestInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportCurrentInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportCurrentInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportDataByVinBrandPeriodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportDataByVinBrandPeriodResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportDataByVinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportDataByVinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportOwnersPeriodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportOwnersPeriodResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportSearchByFullnameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportSearchByFullnameResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportStatementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportStatementResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportStatusByGovPlateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.transportStatusByGovPlateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.tsMonitoringGeneralStatisticsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.tsMonitoringGeneralStatisticsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.tsMonitoringRegionStatisticsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.tsMonitoringRegionStatisticsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalVehicles\XRoadModels.ws_ExternalVehicles.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\identifiers.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalZags\InfocomService.wsdl" />
+    <None Include="Service References\ws_ExternalZags\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalZags\xroad.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.citizenshipCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.citizenshipCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.nationalityCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.nationalityCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testPortalMarriageFormToZagsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testPortalMarriageFormToZagsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsDataByPinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsDataByPinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsEduCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsEduCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsMaritalStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.testZagsMaritalStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.XRoadClientIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.XRoadServiceIdentifierType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsBirthListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsBirthListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsCatalogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsCatalogResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsChildrenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsChildrenResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDataByPinExtendedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDataByPinExtendedResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDataByPinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDataByPinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDeathActByPinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDeathActByPinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDeathListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDeathListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDivorceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsDivorceListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsFIOByPinResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsFIOByPinResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMaritalStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMaritalStatusResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMarriageListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMarriageListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMonitoringRecordsCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMonitoringRecordsCountResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMonitoringRecordsPeriodResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsMonitoringRecordsPeriodResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinAdoptionActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinAdoptionActResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinBirthActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinBirthActResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinDeathActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinDeathActResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinDivorceActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinDivorceActResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinMarriageActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinMarriageActResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinNameChangeActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinNameChangeActResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinPaternityActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinPaternityActResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinsByNSPDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws_ExternalZags\XRoadModels.ws_ExternalZags.zagsPinsByNSPDateResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="strongName.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ExternalService\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalAddress\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalDriver\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalForeign\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalGNSDebt\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalGNSReg\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalGTS\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalJur\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalMeta\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalPassport\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalSF\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalVehicles\" />
+    <WCFMetadataStorage Include="Service References\ws_ExternalZags\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExternalService\ws_External.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExternalService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExternalService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExternalService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalSF\PaymentDebtInfoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalSF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalSF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalSF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGNSDebt\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGNSDebt\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGNSDebt\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGNSReg\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGNSReg\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGNSReg\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalMeta\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalMeta\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalMeta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGTS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGTS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalGTS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalAddress\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalAddress\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalAddress\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\XRoadStructure\XRoadStructure\XRoad.Structure.csproj">
+      <Project>{5cfdf331-54a4-4557-ad6d-b5300f61e151}</Project>
+      <Name>XRoad.Structure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalPassport\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalPassport\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalPassport\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalForeign\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalForeign\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalForeign\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalZags\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalZags\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalZags\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalVehicles\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalVehicles\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalVehicles\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalDriver\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalDriver\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalDriver\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalJur\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalJur\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ws_ExternalJur\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
