@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRoadServiceTest", "XRoadServiceTest\XRoadServiceTest.csproj", "{6981D060-1C72-404A-83FA-3FF6CD9E77B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRoad.App", "XRoadApp\XRoad.App.csproj", "{08CFEFC7-B6B5-4F7A-B469-F1E22C2A21C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRoad.Models", "XRoadModels\XRoad.Models.csproj", "{BDBA8DF2-2031-4A08-A2F6-2E7B589CD574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRoadInternalTest", "XRoadInternalTest\XRoadInternalTest.csproj", "{535A9157-7888-4384-A374-DE1E26E89DE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRoad.Structure", "..\XRoadStructure\XRoadStructure\XRoad.Structure.csproj", "{5CFDF331-54A4-4557-AD6D-B5300F61E151}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6981D060-1C72-404A-83FA-3FF6CD9E77B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6981D060-1C72-404A-83FA-3FF6CD9E77B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6981D060-1C72-404A-83FA-3FF6CD9E77B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6981D060-1C72-404A-83FA-3FF6CD9E77B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CFEFC7-B6B5-4F7A-B469-F1E22C2A21C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CFEFC7-B6B5-4F7A-B469-F1E22C2A21C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CFEFC7-B6B5-4F7A-B469-F1E22C2A21C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CFEFC7-B6B5-4F7A-B469-F1E22C2A21C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBA8DF2-2031-4A08-A2F6-2E7B589CD574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBA8DF2-2031-4A08-A2F6-2E7B589CD574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBA8DF2-2031-4A08-A2F6-2E7B589CD574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBA8DF2-2031-4A08-A2F6-2E7B589CD574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{535A9157-7888-4384-A374-DE1E26E89DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535A9157-7888-4384-A374-DE1E26E89DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535A9157-7888-4384-A374-DE1E26E89DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535A9157-7888-4384-A374-DE1E26E89DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFDF331-54A4-4557-AD6D-B5300F61E151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFDF331-54A4-4557-AD6D-B5300F61E151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFDF331-54A4-4557-AD6D-B5300F61E151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFDF331-54A4-4557-AD6D-B5300F61E151}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F8B8042-F29A-4C75-8242-70F99893499D}
+	EndGlobalSection
+EndGlobal
